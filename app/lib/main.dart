@@ -22,7 +22,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   String _display = '';
   String _currentValue = '';
   String _operator = '';
-  double _result;
+  double _result = 0;
 
   void _onNumberPressed(String value) {
     setState(() {
@@ -138,7 +138,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   Widget _buildNumberButton(String value) {
-    return FlatButton(
+    return TextButton(
       onPressed: () => _onNumberPressed(value),
       child: Text(
         value,
@@ -148,7 +148,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   Widget _buildOperatorButton(String value) {
-    return FlatButton(
+    return TextButton(
       onPressed: () {
         if (value == 'C') {
           _onClearPressed();
@@ -164,7 +164,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   Widget _buildCalculateButton() {
-    return FlatButton(
+    return TextButton(
       onPressed: () => _onCalculatePressed(),
       child: Text(
         '=',
